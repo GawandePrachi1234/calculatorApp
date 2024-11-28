@@ -19,6 +19,15 @@ function App() {
     }
   };
 
+  // New percentage handler
+  const handlePercentage = () => {
+    try {
+      setResult((eval(result) / 100).toString());
+    } catch (error) {
+      setResult("Error");
+    }
+  };
+
   return (
     <div className="App">
       <div>
@@ -41,6 +50,9 @@ function App() {
         <button onClick={handleReset}>C</button>
         <button onClick={handleCalculate}>=</button>
         <button onClick={() => handleClick('/')}>/</button>
+        
+        {/* Percentage Button */}
+        <button onClick={handlePercentage}>%</button>
       </div>
     </div>
   );
